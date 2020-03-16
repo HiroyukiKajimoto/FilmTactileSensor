@@ -30,7 +30,7 @@ sを押すと計測開始、再度sを押すと計測終了で、CSVファイル
 動作させる前に、Processingプログラム中のシリアルポート番号を変更してください。
 Processing側でfを押すと計測する指が変わります。
 
-## 3本指での高速化（無線）
+## 無線接続3本指触覚計測
 - ESP32: Measurement5x10_3Fingers8bitWifiESP32.ino
 - Processing: Measurement5x10_3Fingers8bitWiFi.pde
 
