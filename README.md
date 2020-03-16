@@ -16,22 +16,22 @@ Arduino IDEでESP32プログラムを書き込んでください。
 sを押すと計測開始、再度sを押すと計測終了で、CSVファイルが作成されます。
 
 ## 有線接続の３本指触覚計測
-- ESP32: Measurement5x10_3FingersMultiTask8bit20200314.ino
-- Processing: Measurement5x10_3Fingers8bitESP32MultiTaskHighSpeed_30300314.pde
+- ESP32: Measurement5x10_3FingersESP32.ino
+- Processing: Measurement5x10_3Fingers8bit.pde
 このサンプルは、３本指の触覚センサをUSB接続で利用するものです。現在安定に500Hzで計測出来ています。
 動作させる前に、Processingプログラム中のシリアルポート番号を変更してください。
 
 ## 有線接続の１本指触覚計測
-- ESP32: Measurement5x10_1Fingers8bit20200311.ino
-- Processing: Measurement5x10_1Fingers8bitESP32HighSpeed_30300311.pde
+- ESP32: Measurement5x10_1Fingers8bitESP32.ino
+- Processing: Measurement5x10_1Fingers8bitESP32.pde
 このサンプルは、1本の指のみ計測することで高速なセンシングを実現するものです。1kHzの計測を行っています。
 実際にはもう少し早く出来ますが（おそらく1.5kHz程度まで）、1kHzに設定しています。
 動作させる前に、Processingプログラム中のシリアルポート番号を変更してください。
 Processing側でfを押すと計測する指が変わります。
 
 ## 3本指での高速化（無線）
-- ESP32: Measurement5x10_3Fingers8bitWifi20200316.ino
-- Processing: Measurement5x10_3Fingers8bitESP32WiFiNoWaitHighSpeed_20200316.pde
+- ESP32: Measurement5x10_3Fingers8bitWifiESP32.ino
+- Processing: Measurement5x10_3Fingers8bitWiFi.pde
 サンプルはESP32自体をアクセスポイント(AP)とした、無線接続のサンプルです。400-500Hz程度で計測できます。
 無線接続の安定化のために15個分の計測データをまとめて送信しているため、30ms程度の遅延があります。
 遅延が嫌な場合はプログラム中のBUFFER_NUMを変更してください。
