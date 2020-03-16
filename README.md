@@ -1,48 +1,48 @@
 # FilmTactileSensor
 FilmTactileSensor Based on ESP32
 
-フィルム触覚センサのサンプルプログラムの説明です。状況に応じた複数のサンプルを用意しています。
+Explanation of film tactile sensor. Some sample codes for different situations.
 
-## 共通
-PC側のサンプルプログラムはProcessingで作成しています。
-ESP32側のサンプルプログラムはArduino IDEで作成しています。
+## Common
+PC side is developed by Processing.
+ESP32 side is developed by Arduino IDE
 
-### 準備
-センサのESP32-DevkitCをPCにUSBケーブルで接続し、シリアルポート番号を確認してください。
-Arduino IDEでESP32プログラムを書き込んでください。
+### Preparation
+Check serial port number, and write program to ESP32 by Arduino IDE
 
-### Processing側の共通操作
-1,2,3,4を押すと計測レンジを変更します。
-sを押すと計測開始、再度sを押すと計測終了で、CSVファイルが作成されます。
+### Processing program common operation 
+1,2,3,4: Change measurement range
+s: start and stop recording. A new csv file is generated.
 
-## 有線接続の３本指触覚計測
+## Sample1: wired communication, 3 fingers measurement.
 - ESP32: Measurement5x10_3FingersESP32.ino
 - Processing: Measurement5x10_3Fingers8bit.pde
 
-このサンプルは、３本指の触覚センサをUSB接続で利用するものです。500Hzで計測出来ます。
-動作させる前に、Processingプログラム中のシリアルポート番号を変更してください。
+This is the most basic sample using USB connection. 500 Hz measurement of all three fingers.
+Before start, change serial port number in Processing program.
 
-## 有線接続の１本指触覚計測
+## Sample2: wired communication, 1 finger measurement.
 - ESP32: Measurement5x10_1Fingers8bitESP32.ino
 - Processing: Measurement5x10_1Fingers8bitESP32.pde
 
+This measures only 1 finger, to make it faster. 1kHz sampling is achieved.
 このサンプルは、1本の指のみ計測することで高速なセンシングを実現するものです。1kHzの計測を行っています。
-動作させる前に、Processingプログラム中のシリアルポート番号を変更してください。
-Processing側でfを押すと計測する指が変わります。
+Before start, change serial port number in Processing program.
+Press "f" to change finger.
 
-## 3本指での高速化（無線）
+## Sample3: wireless communication, 3 fingers measurement.
+
 - ESP32: Measurement5x10_3Fingers8bitWifiESP32.ino
 - Processing: Measurement5x10_3Fingers8bitWiFi.pde
 
-このサンプルはESP32自体をアクセスポイント(AP)とした、無線接続のサンプルです。400-500Hz程度で計測できます。
-無線接続の安定化のために15個分の計測データをまとめて送信しているため、30ms程度の遅延があります。
-遅延が嫌な場合はプログラム中のBUFFER_NUMを変更してください。
+This is wireless communication sample, using ESP32 as access point (AP). 400 to 500 Hz measurement of three fingers.
+Measurements are conducted 15 times before transmitting data, for stable communication, resulting in 30ms delay.
+If you need to do measurement in real-time, change BUFFER_NUM in the code.
 
-ESP32にUSBポート経由で給電してください。PCから接続しても問題ないですし、モバイルバッテリーで接続しても結構です。
-無線を使用したい状況から考えて、小型のモバイルバッテリーを使う場合が多いと思われます。
+Power on ESP32 through USB port, by either connecting to PC or mobile battery.
+Mobile battery might be better for practical wireless applications.
 
-ESP32はESP32WifiというSSIDのアクセスポイントになります。パスワードはpasswordです（これらはプログラムに書かれているので変更できます）
-PCをこのアクセスポイントに接続してください。そのうえでProcessingのプログラムを起動してください。
-この説明から分かる通り、このサンプルプログラムを動作させる際にはPCはESP32に直接無線接続されるので、外部ネットワークに接続できなくなります。
-これが不都合な場合は外部ルータをアクセスポイントとして用いるプログラムに変更する必要があります。
+ESP32 SSID can be seen as "ESP32Wifi", and its password is "password" (you should change those).
+Connect your PC to this access point. It means that the PC cannot connect to other network.
+If you need to connect to the other network, you need to change the program and use wireless router as an access point.
 
