@@ -26,7 +26,6 @@ Before start, change serial port number in Processing program.
 - Processing: Measurement5x10_1Fingers8bitESP32.pde
 
 This measures only 1 finger, to make it faster. 1kHz sampling is achieved.
-このサンプルは、1本の指のみ計測することで高速なセンシングを実現するものです。1kHzの計測を行っています。
 Before start, change serial port number in Processing program.
 Press "f" to change finger.
 
