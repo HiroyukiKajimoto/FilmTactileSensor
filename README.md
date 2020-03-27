@@ -77,3 +77,9 @@ Mobile battery might be better for practical wireless applications.
 ESP32 SSID can be seen as "ESP32Wifi", and its password is "password" (you should change those).
 Connect your PC to this access point. It means that the PC cannot connect to other network.
 If you need to connect to the other network, you need to change the program and use wireless router as an access point.
+
+## Sample4: 12bit communication
+- ESP32: Measurement10x10_3Fingers12bitESP32.ino
+- Processing: Measurement10x10_3Fingers12bit.pde
+While the other samples transmit data by 8bits, this sample transmits by 12bit. As we used 12bit AD converter, it is considered more accurate. 
+Practically , though, the pressure data has large noise and 12bit is not necessary. On the other hand, temperature can be measured at 0.015deg-C resolution.
